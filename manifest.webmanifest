@@ -2,7 +2,7 @@
   "name": "NYX Cell Counter Pro",
   "short_name": "NYX Counter",
   "description": "Ferramentas laboratoriais, contadores, consultas rápidas, calculadoras e quiz técnico de Biomedicina.",
-  "id": "./?nyx=v5.28",
+  "id": "./?nyx=v5.30",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -18,19 +18,19 @@
   ],
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon.svg",
+      "src": "icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"

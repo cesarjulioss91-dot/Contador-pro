@@ -1,0 +1,14 @@
+NYX v5.30 — GitHub Pages FLAT Upload
+
+Motivo:
+- O usuário relatou dificuldade para subir pastas pelo celular.
+- A versão v5.29 dependia das pastas assets/ e icons/.
+
+Correção:
+- Todos os arquivos CSS, JS e ícones foram movidos para a raiz.
+- index.html, manifest.webmanifest, sw.js e verificar-arquivos.html foram reescritos para caminhos flat.
+- 00_lazy_bootstrap.js agora carrega scripts pela raiz.
+
+Validação:
+- JS validado com node --check.
+- Sem referências restantes a assets/ ou icons/ nos arquivos principais.

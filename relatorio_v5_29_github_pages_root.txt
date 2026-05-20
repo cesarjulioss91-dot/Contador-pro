@@ -1,0 +1,10 @@
+v5.29 — GitHub Pages Root Package
+
+Correção principal:
+- pacote ZIP sem pasta externa, pronto para arrastar todo o conteúdo para a raiz do repositório GitHub Pages.
+- adicionada página verificar-arquivos.html para diagnosticar CSS/JS ausentes.
+- adicionada mensagem de alerta no index caso assets/css/00_style.css não carregue.
+- service worker cache bump para v5.29.
+
+Observação:
+A captura enviada mostra HTML sem CSS, típico de assets/ não publicado no mesmo nível do index.html ou caminho de publicação incorreto.

@@ -9,20 +9,37 @@
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
   <meta content="#050814" name="theme-color"/>
   <title>
-   NYX Cell Counter Pro v5.28 &mdash; Modular PWA
+   NYX Cell Counter Pro v5.30 &mdash; Modular PWA
   </title>
-  <link href="assets/css/00_style.css" rel="stylesheet"/>
+  <style id="nyx-critical-css">
+    /* Critical fallback: mantém a tela usável se o CSS externo ainda não carregou. */
+    body{margin:0;background:#050814;color:#eef6ff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+    .asset-warning{display:block;margin:12px;padding:12px;border:1px solid #fb7185;border-radius:14px;background:rgba(251,113,133,.12);color:#ffe4e6;font-weight:800;line-height:1.35}
+    .home-screen{min-height:100vh;padding:18px;background:radial-gradient(circle at 0 0,rgba(103,232,249,.14),transparent 35%),linear-gradient(145deg,#050814,#081020);}
+    .home-head h1{font-size:clamp(2rem,8vw,4rem);line-height:.95;margin:.4rem 0;font-weight:950;letter-spacing:-.06em}
+    .home-head p{color:#9fb1cc;font-weight:800;font-size:1rem}
+    .home-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+    .home-option,.home-manual-top,.btn{border:1px solid rgba(103,232,249,.24);border-radius:24px;background:rgba(15,23,42,.82);color:#eef6ff;padding:16px;text-align:left;font:inherit;font-weight:850}
+    .home-option b{display:block;font-size:1.35rem;margin:.25rem 0}.home-option small{color:#67e8f9;text-transform:uppercase;letter-spacing:.14em;font-weight:950}.home-option span{color:#c8d6ea}
+    .modal,.app,#timerAdjustModal,#fluidConfigModal,#calcHelpModal,#summaryModal{display:none}
+  </style>
+
+  <link href="00_style.css" rel="stylesheet"/>
   <meta content="NYX Cell Counter Pro" name="application-name"/>
   <meta content="NYX Counter" name="apple-mobile-web-app-title"/>
   <meta content="v3.99-quiz-one-screen-flow" name="nyx-app-build"/>
   <link href="manifest.webmanifest" rel="manifest"/>
-  <link href="icons/icon.svg" rel="apple-touch-icon"/>
-  <link href="assets/css/01_style.css" rel="stylesheet"/>
-  <link href="assets/css/09_lazy_modular.css" rel="stylesheet"/>
+  <link href="icon.svg" rel="apple-touch-icon"/>
+  <link href="01_style.css" rel="stylesheet"/>
+  <link href="09_lazy_modular.css" rel="stylesheet"/>
  </head>
- <body data-build="v5.28-modular-pwa" data-nyx-architecture="modular-pwa-lazy-assets-v5.28" data-version="v3.24-fluid-modal">
+ <body data-build="v5.30-flat-github-upload" data-nyx-architecture="modular-pwa-lazy-flat-v5.30-github-pages-mobile" data-version="v3.24-fluid-modal">
   <section class="home-screen" id="homeScreen">
    <article class="home-card">
+    <div class="asset-warning" id="assetWarning">
+     Se esta mensagem continuar aparecendo depois de carregar, os arquivos externos não foram enviados corretamente ou ainda não foram publicados pelo GitHub Pages. No GitHub, a raiz precisa conter: index.html, assets/, , sw.js e manifest.webmanifest.
+    </div>
+
     <header class="home-head">
      <h1>
       NYX Cell Counter Pro
@@ -338,15 +355,25 @@
   - Todos os botões internos do Quiz recebem touch-action: pan-y.
   - Fallback JS implementa rolagem manual em touchmove vertical dentro do Quiz.
 ============================================================ -->
-  <link href="assets/css/02_style.css" rel="stylesheet"/>
-  <link href="assets/css/03_style.css" rel="stylesheet"/>
-  <link href="assets/css/04_style.css" rel="stylesheet"/>
-  <link href="assets/css/05_style.css" rel="stylesheet"/>
-  <link href="assets/css/06_style.css" rel="stylesheet"/>
-  <link href="assets/css/07_style.css" rel="stylesheet"/>
-  <link href="assets/css/08_style.css" rel="stylesheet"/>
-  <script src="assets/js/00_pwa_register.js"></script>
-  <script src="assets/js/00_lazy_bootstrap.js">
+  <link href="02_style.css" rel="stylesheet"/>
+  <link href="03_style.css" rel="stylesheet"/>
+  <link href="04_style.css" rel="stylesheet"/>
+  <link href="05_style.css" rel="stylesheet"/>
+  <link href="06_style.css" rel="stylesheet"/>
+  <link href="07_style.css" rel="stylesheet"/>
+  <link href="08_style.css" rel="stylesheet"/>
+  <script src="00_pwa_register.js"></script>
+  <script src="00_lazy_bootstrap.js">
   </script>
- </body>
+ 
+  <script>
+   window.addEventListener('load', function(){
+     var ok = !!document.querySelector('link[href="00_style.css"]');
+     var w = document.getElementById('assetWarning');
+     fetch('00_style.css', {cache:'no-store'}).then(function(r){
+       if(r.ok && w) w.style.display='none';
+     }).catch(function(){});
+   });
+  </script>
+</body>
 </html>

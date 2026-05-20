@@ -1,4 +1,4 @@
-NYX v5.28 — Modular PWA
+NYX v5.29 — Modular PWA
 
 Arquitetura:
 - index.html leve com bootstrap lazy.

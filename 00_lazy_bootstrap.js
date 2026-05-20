@@ -44,7 +44,7 @@
   function loadScript(src){
     return new Promise(function(resolve,reject){
       var s=document.createElement('script');
-      s.src='assets/js/'+src;
+      s.src=src;
       s.async=false;
       s.onload=function(){ resolve(src); };
       s.onerror=function(){ reject(new Error('Falha ao carregar '+src)); };
