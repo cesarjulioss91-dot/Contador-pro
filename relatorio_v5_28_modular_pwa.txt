@@ -1,0 +1,15 @@
+NYX v5.28 — Modular PWA
+
+Arquitetura:
+- index.html leve com bootstrap lazy.
+- Runtime pesado carregado sob demanda.
+- manifest.webmanifest criado.
+- sw.js criado com cache offline dos assets locais.
+- ícones PWA 192/512 PNG + SVG criados.
+- README_ANDROID.txt incluído.
+
+Requisito de execução:
+- Servir por HTTP/HTTPS.
+- Android: preferir http://127.0.0.1:8080 via Termux/app servidor ou hospedagem HTTPS.
+
+Arquivos cacheados no service worker: 41

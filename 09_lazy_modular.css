@@ -1,0 +1,4 @@
+
+/* v5.27 — loading state for lazy modular runtime */
+body.nyx-runtime-loading .home-screen::after{content:"Carregando módulos...";position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:9999;padding:12px 16px;border-radius:999px;border:1px solid rgba(103,232,249,.35);background:rgba(5,8,20,.96);color:#eef6ff;font-weight:950;box-shadow:0 16px 48px rgba(0,0,0,.45);}
+body.nyx-runtime-loading .home-option{pointer-events:none;opacity:.84;}

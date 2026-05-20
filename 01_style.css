@@ -1,0 +1,41 @@
+
+/* v5.25 — Home/modal stable styles independent of data-build runtime changes */
+#homeScreen .home-option,
+#homeScreen .home-manual-top,
+#homeScreen [data-home-panel],
+#homeScreen [data-home-mode],
+#homeScreen [data-home-main] {
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  cursor: pointer !important;
+}
+#homeScreen.hidden { display: none !important; }
+#homeCounterPanel[hidden] { display: none !important; }
+body.nyx-counter-modal-open #homeCounterPanel.home-counter-modal,
+#homeCounterPanel.home-counter-modal:not([hidden]) {
+  display: grid !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  padding: max(14px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(14px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)) !important;
+  place-items: center !important;
+  overflow: auto !important;
+  background: rgba(2, 6, 23, .76) !important;
+  backdrop-filter: blur(10px) !important;
+}
+#homeCounterPanel.home-counter-modal:not([hidden]) .home-counter-head,
+#homeCounterPanel.home-counter-modal:not([hidden]) .home-counter-grid {
+  width: min(760px, 94vw) !important;
+}
+#homeCounterPanel.home-counter-modal:not([hidden]) .home-counter-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  max-height: min(72dvh, 720px) !important;
+  overflow: auto !important;
+}
+@media (max-width: 520px) {
+  #homeCounterPanel.home-counter-modal:not([hidden]) .home-counter-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

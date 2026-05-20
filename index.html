@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <!-- v3.30B CSS DEAD SCOPE CLEANUP: remove apenas CSS escopado para data-version/data-build inativos. -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <meta content="yes" name="mobile-web-app-capable"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="#050814" name="theme-color"/>
+  <title>
+   NYX Cell Counter Pro v5.28 &mdash; Modular PWA
+  </title>
+  <link href="assets/css/00_style.css" rel="stylesheet"/>
+  <meta content="NYX Cell Counter Pro" name="application-name"/>
+  <meta content="NYX Counter" name="apple-mobile-web-app-title"/>
+  <meta content="v3.99-quiz-one-screen-flow" name="nyx-app-build"/>
+  <link href="manifest.webmanifest" rel="manifest"/>
+  <link href="icons/icon.svg" rel="apple-touch-icon"/>
+  <link href="assets/css/01_style.css" rel="stylesheet"/>
+  <link href="assets/css/09_lazy_modular.css" rel="stylesheet"/>
+ </head>
+ <body data-build="v5.28-modular-pwa" data-nyx-architecture="modular-pwa-lazy-assets-v5.28" data-version="v3.24-fluid-modal">
+  <section class="home-screen" id="homeScreen">
+   <article class="home-card">
+    <header class="home-head">
+     <h1>
+      NYX Cell Counter Pro
+     </h1>
+     <p>
+      Bancada, consultas e estudo em um fluxo mais limpo
+     </p>
+     <button aria-label="Abrir manual" class="home-manual-top" data-home-mode="manual" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('manual',event)" type="button">
+      Manual
+     </button>
+    </header>
+    <section class="home-options home-options-pro home-options-clean" id="homePrimaryPanel">
+     <button class="home-option clean-main counters" data-home-panel="counters" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.showCounters(event)" type="button">
+      <small>
+       Bancada
+      </small>
+      <b>
+       Contadores
+      </b>
+      <span>
+       Diferencial, reticul&oacute;citos, BAAR, urina, l&iacute;quidos e col&ocirc;nias.
+      </span>
+     </button>
+     <button class="home-option training" data-home-mode="training" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('training',event)" type="button">
+      <small>
+       Estudo
+      </small>
+      <b>
+       Quiz
+      </b>
+      <span>
+       1.650 quest&otilde;es para estudo.
+      </span>
+     </button>
+     <button class="home-option atlas" data-home-mode="atlas" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('atlas',event)" type="button">
+      <small>
+       Consulta
+      </small>
+      <b>
+       Consultas r&aacute;pidas
+      </b>
+      <span>
+       Fichas, achados e correla&ccedil;&otilde;es &uacute;teis.
+      </span>
+     </button>
+     <button class="home-option calc" data-home-mode="calc" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('calc',event)" type="button">
+      <small>
+       Ferramentas
+      </small>
+      <b>
+       Calculadoras
+      </b>
+      <span>
+       C&aacute;lculos laboratoriais e cient&iacute;ficos.
+      </span>
+     </button>
+     <button class="home-option timer" data-home-mode="timer" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('timer',event)" type="button">
+      <small>
+       Tempo
+      </small>
+      <b>
+       Timer
+      </b>
+      <span>
+       Cron&ocirc;metro ou regressivo para bancada.
+      </span>
+     </button>
+    </section>
+    <section aria-hidden="true" class="home-counter-panel home-counter-modal" hidden="" id="homeCounterPanel">
+     <div class="home-counter-head">
+      <button class="btn" data-home-main="" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.closeCounters(event)" type="button">
+       Fechar
+      </button>
+      <div>
+       <small>
+        Bancada
+       </small>
+       <b>
+        Contadores
+       </b>
+       <span>
+        Escolha a rotina de contagem.
+       </span>
+      </div>
+     </div>
+     <div class="home-counter-grid">
+      <button class="home-option hot" data-home-mode="hemato" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('hemato',event)" type="button">
+       <small>
+        Diferencial
+       </small>
+       <b>
+        Hematologia
+       </b>
+       <span>
+        Leuc&oacute;citos, eritroblastos e absolutos.
+       </span>
+      </button>
+      <button class="home-option myelo" data-home-mode="myelo" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('myelo',event)" type="button">
+       <small>
+        Medula
+       </small>
+       <b>
+        Mielograma
+       </b>
+       <span>
+        Rela&ccedil;&atilde;o M:E, blastos e plasm&oacute;citos.
+       </span>
+      </button>
+      <button class="home-option" data-home-mode="urine" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('urine',event)" type="button">
+       <small>
+        Sedimento
+       </small>
+       <b>
+        Urina
+       </b>
+       <span>
+        Neubauer ou K-Cell.
+       </span>
+      </button>
+      <button class="home-option colonies" data-home-mode="colonies" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('colonies',event)" type="button">
+       <small>
+        Micro
+       </small>
+       <b>
+        Col&ocirc;nias
+       </b>
+       <span>
+        Dilui&ccedil;&atilde;o, al&ccedil;a e UFC/mL.
+       </span>
+      </button>
+      <button class="home-option fluids" data-home-mode="fluids" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('fluids',event)" type="button">
+       <small>
+        Cito
+       </small>
+       <b>
+        L&iacute;quidos
+       </b>
+       <span>
+        LCR, pleural, asc&iacute;tico e sinovial.
+       </span>
+      </button>
+      <button class="home-option retic" data-home-mode="reticulocytes" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('reticulocytes',event)" type="button">
+       <small>
+        Eritroide
+       </small>
+       <b>
+        Reticul&oacute;citos
+       </b>
+       <span>
+        Contagem manual em 1.000 c&eacute;lulas.
+       </span>
+      </button>
+      <button class="home-option baar" data-home-mode="baar" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('baar',event)" type="button">
+       <small>
+        Micro/TB
+       </small>
+       <b>
+        BAAR
+       </b>
+       <span>
+        Baciloscopia semiquantitativa por campo.
+       </span>
+      </button>
+      <button class="home-option semen" data-home-mode="semen" onclick="return window.NYXHomeV525&amp;&amp;window.NYXHomeV525.open('semen',event)" type="button">
+       <small>
+        Andrologia
+       </small>
+       <b>
+        Espermograma
+       </b>
+       <span>
+        Motilidade e percentuais autom&aacute;ticos.
+       </span>
+      </button>
+     </div>
+    </section>
+   </article>
+  </section>
+  <main class="app">
+   <section class="hud" id="hud">
+   </section>
+   <section class="keys">
+    <div class="grid" id="grid">
+    </div>
+   </section>
+  </main>
+  <button class="float-fullscreen" id="fullscreenBtn" type="button">
+   Toque para tela cheia
+  </button>
+  <section aria-hidden="true" class="modal" id="timerAdjustModal">
+   <article class="modal-card">
+    <div class="modal-head">
+     <h2>
+      Ajustar timer
+     </h2>
+     <button class="btn danger" id="closeTimerAdjust" type="button">
+      Fechar
+     </button>
+    </div>
+    <div class="timer-adjust-grid">
+     <div class="timer-field">
+      <label for="timerMinutes">
+       Minutos
+      </label>
+      <input id="timerMinutes" inputmode="numeric" max="999" min="0" type="number" value="5"/>
+     </div>
+     <div class="timer-field">
+      <label for="timerSeconds">
+       Segundos
+      </label>
+      <input id="timerSeconds" inputmode="numeric" max="59" min="0" type="number" value="0"/>
+     </div>
+    </div>
+    <section class="timer-adjust-actions">
+     <button class="btn" id="manualCronoBtn" type="button">
+      Cron&ocirc;metro
+     </button>
+     <button class="btn good" id="applyTimerAdjust" type="button">
+      Aplicar
+     </button>
+     <button class="btn danger" id="resetTimerAdjust" type="button">
+      Zerar
+     </button>
+    </section>
+   </article>
+  </section>
+  <section aria-hidden="true" class="modal fluid-config-modal" id="fluidConfigModal">
+   <article class="modal-card fluid-config-card">
+    <div class="modal-head">
+     <div>
+      <h2 id="fluidConfigTitle">
+       Configurar l&iacute;quidos
+      </h2>
+      <p class="fluid-config-description" id="fluidConfigDescription">
+       Ajuste o par&acirc;metro selecionado.
+      </p>
+     </div>
+     <button class="btn danger" id="closeFluidConfig" type="button">
+      Fechar
+     </button>
+    </div>
+    <div class="fluid-config-body" id="fluidConfigBody">
+    </div>
+    <div aria-live="polite" class="fluid-config-error" id="fluidConfigError">
+    </div>
+    <section class="fluid-config-actions">
+     <button class="btn" id="cancelFluidConfig" type="button">
+      Cancelar
+     </button>
+     <button class="btn good" id="applyFluidConfig" type="button">
+      Aplicar
+     </button>
+    </section>
+   </article>
+  </section>
+  <section aria-hidden="true" class="modal" id="calcHelpModal">
+   <article class="modal-card">
+    <div class="modal-head">
+     <h2>
+      Ajuda da calculadora
+     </h2>
+     <button class="btn danger" id="closeCalcHelp" type="button">
+      Fechar
+     </button>
+    </div>
+    <div class="help-content" id="calcHelpContent">
+    </div>
+   </article>
+  </section>
+  <section aria-hidden="true" class="modal" id="summaryModal">
+   <article class="modal-card">
+    <div class="modal-head">
+     <h2>
+      Resumo da contagem
+     </h2>
+     <button class="btn danger" id="closeSummary" type="button">
+      Fechar
+     </button>
+    </div>
+    <div id="summaryContent">
+    </div>
+   </article>
+  </section>
+  <div class="toast" id="toast">
+   OK
+  </div>
+  <!-- ============================================================
+  NYX v4.20 — Quiz Structural Scroll Fix
+  Causa raiz corrigida:
+  1. touch-action:manipulation no body bloqueia pan-y no Android/Chrome
+  2. v4.18 e v4.19 conflitam: data-stable-build é sobrescrito para v4.19,
+     mas v4.18 ainda adiciona nyx-quiz-scroll-hard ao .keys,
+     tornando as regras v4.18 inativas (selector body[data-stable-build*="v4.18"] não bate)
+     enquanto .keys mantém a classe órfã
+  3. v4.19 move o scroll para .app, fazendo o HUD rolar junto
+  Abordagem v4.20:
+  - .keys é o container de scroll correto (HUD fica fixo no grid)
+  - body recebe nyx-quiz-body-420 como chave de ativação do CSS
+  - touch-action:pan-y aplicado ao body + app + keys
+  - #grid: display:block, height:auto, overflow:visible
+  - Remove classes conflitantes de versões anteriores
+  - quiz-hero-v413 e quiz-qa-panel-v414 suprimidos por CSS puro
+  - Sem setTimeout frágeis no hot path de render
+============================================================ -->
+  <!-- ============================================================
+  NYX v4.22 — Quiz Touch Scroll Fix
+  Causa tratada:
+  - O conteúdo do Quiz é quase todo formado por <button>.
+  - Regras antigas aplicam touch-action: manipulation em button globalmente.
+  - Em Android/Chrome via content:// isso pode impedir pan/scroll quando o gesto começa em cards/opções.
+  Estratégia:
+  - .keys volta a ser o scroller estável do Quiz.
+  - Todos os botões internos do Quiz recebem touch-action: pan-y.
+  - Fallback JS implementa rolagem manual em touchmove vertical dentro do Quiz.
+============================================================ -->
+  <link href="assets/css/02_style.css" rel="stylesheet"/>
+  <link href="assets/css/03_style.css" rel="stylesheet"/>
+  <link href="assets/css/04_style.css" rel="stylesheet"/>
+  <link href="assets/css/05_style.css" rel="stylesheet"/>
+  <link href="assets/css/06_style.css" rel="stylesheet"/>
+  <link href="assets/css/07_style.css" rel="stylesheet"/>
+  <link href="assets/css/08_style.css" rel="stylesheet"/>
+  <script src="assets/js/00_pwa_register.js"></script>
+  <script src="assets/js/00_lazy_bootstrap.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,5 @@
+
+/* v5.21 — revisão técnica do banco + manual Quiz/Consultas rápidas */
+body.nyx-quiz-standalone-426.nyx-quiz-clean-v520 .nyxq520-title small::after{content:' · revisado v5.21'; color:var(--accent);}
+.manual-content .manual-warning-box{margin-top:10px;}
+.manual-content .manual-steps li{margin-bottom:6px;}

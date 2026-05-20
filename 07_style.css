@@ -1,0 +1,4 @@
+
+/* v5.22 — auditoria editorial: compactação visual e nota técnica no manual */
+.nyx-v522-audit-note{border:1px solid rgba(103,232,249,.24);background:rgba(103,232,249,.07);border-radius:16px;padding:10px 12px;margin:10px 0;color:var(--soft);font-weight:760;line-height:1.34;}
+.nyx-v522-audit-note b{color:var(--accent);}
