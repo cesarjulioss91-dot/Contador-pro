@@ -9,7 +9,7 @@
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
   <meta content="#050814" name="theme-color"/>
   <title>
-   NYX Cell Counter Pro v5.31 &mdash; Flat Direct
+   NYX Cell Counter Pro v5.32 &mdash; Flat Cache Killer
   </title>
   <style id="nyx-critical-css">
     /* Critical fallback: mantém a tela usável se o CSS externo ainda não carregou. */
@@ -24,6 +24,14 @@
     .modal,.app,#timerAdjustModal,#fluidConfigModal,#calcHelpModal,#summaryModal{display:none}
   </style>
 
+
+  <style id="nyx-v532-cache-killer-css">
+    /* v5.32: neutraliza qualquer classe velha do lazy loader que venha de cache antigo. */
+    body.nyx-runtime-loading .home-screen::after{content:none!important;display:none!important;}
+    body.nyx-runtime-loading .home-option{pointer-events:auto!important;opacity:1!important;}
+    .nyx-loading-toast,.nyx-runtime-loading-toast{display:none!important;}
+  </style>
+
   <link href="00_style.css" rel="stylesheet"/>
   <meta content="NYX Cell Counter Pro" name="application-name"/>
   <meta content="NYX Counter" name="apple-mobile-web-app-title"/>
@@ -31,9 +39,27 @@
   <link href="manifest.webmanifest" rel="manifest"/>
   <link href="icon.svg" rel="apple-touch-icon"/>
   <link href="01_style.css" rel="stylesheet"/>
-  <link href="09_lazy_modular.css" rel="stylesheet"/>
  </head>
- <body data-build="v5.31-flat-direct-no-lazy" data-nyx-architecture="flat-direct-no-lazy-v5.31-github-pages-mobile" data-version="v3.24-fluid-modal">
+ <body data-build="v5.32-flat-cache-killer" data-nyx-architecture="flat-direct-cache-killer-v5.32-github-pages-mobile" data-version="v3.24-fluid-modal">
+  <script>
+   /* NYX v5.32 — limpeza antes de qualquer runtime antigo. */
+   (function(){
+     try{ window.NYX_VERSION='v5.32-flat-cache-killer'; }catch(e){}
+     try{ document.body && document.body.classList.remove('nyx-runtime-loading'); }catch(e){}
+     try{ document.documentElement.setAttribute('data-nyx-cache-killer','v5.32'); }catch(e){}
+     if('serviceWorker' in navigator){
+       navigator.serviceWorker.getRegistrations().then(function(regs){
+         return Promise.all(regs.map(function(reg){ return reg.unregister(); }));
+       }).catch(function(){});
+     }
+     if('caches' in window){
+       caches.keys().then(function(keys){
+         return Promise.all(keys.map(function(k){ return /nyx|cell-counter|pwa|v5/i.test(k) ? caches.delete(k) : Promise.resolve(false); }));
+       }).catch(function(){});
+     }
+   })();
+  </script>
+
   <section class="home-screen" id="homeScreen">
    <article class="home-card">
     <div class="asset-warning" id="assetWarning">
@@ -365,27 +391,36 @@
 
 
 
-  <!-- NYX v5.31: carregamento direto. Sem lazy loading e sem PWA cache para evitar travamento no GitHub Pages mobile. -->
-  <script src="00_cache_reset_v531.js?v=5.31"></script>
-  <script src="01_modular_core.js?v=5.31"></script>
-  <script src="02_script.js?v=5.31"></script>
-  <script src="04_script.js?v=5.31"></script>
-  <script src="05_script.js?v=5.31"></script>
-  <script src="06_script.js?v=5.31"></script>
-  <script src="07_script.js?v=5.31"></script>
-  <script src="08_script.js?v=5.31"></script>
-  <script src="09_script.js?v=5.31"></script>
-  <script src="10_quiz_bank_v23_data.js?v=5.31"></script>
-  <script src="11_script.js?v=5.31"></script>
-  <script src="12_quiz_hud.js?v=5.31"></script>
-  <script src="13_atlas_quiz_sync.js?v=5.31"></script>
-  <script src="14_script.js?v=5.31"></script>
-  <script src="15_home_counter_modal.js?v=5.31"></script>
-  <script src="16_quiz_clean_auto_report.js?v=5.31"></script>
-  <script src="17_script.js?v=5.31"></script>
-  <script src="18_script.js?v=5.31"></script>
-  <script src="19_consultas_rapidas.js?v=5.31"></script>
-  <script src="00_home_stable_clicks.js?v=5.31"></script>
+  <!-- NYX v5.32: carregamento direto + cache killer. Sem lazy loading e sem PWA cache. -->
+  <script src="00_cache_reset_v532.js?v=5.32"></script>
+  <script>
+   window.addEventListener('DOMContentLoaded', function(){
+     try{ document.body.classList.remove('nyx-runtime-loading'); }catch(e){}
+     setInterval(function(){
+       try{ document.body.classList.remove('nyx-runtime-loading'); }catch(e){}
+     }, 700);
+   }, {once:true});
+  </script>
+
+  <script src="01_modular_core.js?v=5.32"></script>
+  <script src="02_script.js?v=5.32"></script>
+  <script src="04_script.js?v=5.32"></script>
+  <script src="05_script.js?v=5.32"></script>
+  <script src="06_script.js?v=5.32"></script>
+  <script src="07_script.js?v=5.32"></script>
+  <script src="08_script.js?v=5.32"></script>
+  <script src="09_script.js?v=5.32"></script>
+  <script src="10_quiz_bank_v23_data.js?v=5.32"></script>
+  <script src="11_script.js?v=5.32"></script>
+  <script src="12_quiz_hud.js?v=5.32"></script>
+  <script src="13_atlas_quiz_sync.js?v=5.32"></script>
+  <script src="14_script.js?v=5.32"></script>
+  <script src="15_home_counter_modal.js?v=5.32"></script>
+  <script src="16_quiz_clean_auto_report.js?v=5.32"></script>
+  <script src="17_script.js?v=5.32"></script>
+  <script src="18_script.js?v=5.32"></script>
+  <script src="19_consultas_rapidas.js?v=5.32"></script>
+  <script src="00_home_stable_clicks.js?v=5.32"></script>
   <script>
    window.addEventListener('load', function(){
      var ok = !!document.querySelector('link[href="00_style.css"]');

@@ -1,4 +1,3 @@
-/* v5.32 compatibility shim: old index may request this file. */
 /* NYX v5.32 — remove service workers/caches antigos para evitar tela presa em módulos. */
 (function(){
   'use strict';

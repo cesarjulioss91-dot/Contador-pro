@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NYX — Limpar cache</title>
+<style>body{margin:0;background:#050814;color:#eef6ff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;display:grid;min-height:100vh;place-items:center;padding:24px}.card{max-width:560px;border:1px solid rgba(103,232,249,.28);background:rgba(15,23,42,.88);border-radius:24px;padding:22px;box-shadow:0 20px 70px rgba(0,0,0,.45)}h1{margin:0 0 8px;font-size:1.6rem}p{color:#c8d6ea;line-height:1.45}.ok{color:#67e8f9;font-weight:900}.btn{display:inline-block;margin-top:14px;border:1px solid rgba(103,232,249,.38);border-radius:16px;padding:12px 16px;background:rgba(103,232,249,.12);color:#eef6ff;text-decoration:none;font-weight:900}</style></head>
+<body><main class="card"><h1>Limpando cache do NYX</h1><p id="status">Removendo service workers e caches antigos...</p><a class="btn" href="./index.html?v=532">Abrir app</a></main>
+<script>
+(async function(){
+  const out=document.getElementById('status');
+  try{
+    if('serviceWorker' in navigator){ const regs=await navigator.serviceWorker.getRegistrations(); await Promise.all(regs.map(r=>r.unregister())); }
+    if('caches' in window){ const keys=await caches.keys(); await Promise.all(keys.map(k=>/nyx|cell-counter|pwa|v5/i.test(k)?caches.delete(k):false)); }
+    try{localStorage.removeItem('nyx-runtime-loading'); sessionStorage.clear();}catch(e){}
+    out.innerHTML='<span class="ok">Cache limpo.</span> Abrindo a versão v5.32...';
+    setTimeout(()=>location.replace('./index.html?v=532'),900);
+  }catch(e){ out.textContent='Não consegui limpar tudo automaticamente. Toque em Abrir app e, se necessário, apague os dados do site no Chrome.'; }
+})();
+</script></body></html>
