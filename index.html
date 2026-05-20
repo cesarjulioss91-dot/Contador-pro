@@ -9,7 +9,7 @@
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
   <meta content="#050814" name="theme-color"/>
   <title>
-   NYX Cell Counter Pro v5.30 &mdash; Modular PWA
+   NYX Cell Counter Pro v5.31 &mdash; Flat Direct
   </title>
   <style id="nyx-critical-css">
     /* Critical fallback: mantém a tela usável se o CSS externo ainda não carregou. */
@@ -33,11 +33,11 @@
   <link href="01_style.css" rel="stylesheet"/>
   <link href="09_lazy_modular.css" rel="stylesheet"/>
  </head>
- <body data-build="v5.30-flat-github-upload" data-nyx-architecture="modular-pwa-lazy-flat-v5.30-github-pages-mobile" data-version="v3.24-fluid-modal">
+ <body data-build="v5.31-flat-direct-no-lazy" data-nyx-architecture="flat-direct-no-lazy-v5.31-github-pages-mobile" data-version="v3.24-fluid-modal">
   <section class="home-screen" id="homeScreen">
    <article class="home-card">
     <div class="asset-warning" id="assetWarning">
-     Se esta mensagem continuar aparecendo depois de carregar, os arquivos externos não foram enviados corretamente ou ainda não foram publicados pelo GitHub Pages. No GitHub, a raiz precisa conter: index.html, assets/, , sw.js e manifest.webmanifest.
+     Se esta mensagem continuar aparecendo depois de carregar, os arquivos externos não foram enviados corretamente ou ainda não foram publicados pelo GitHub Pages. No GitHub, a raiz precisa conter: index.html, os arquivos .css, os arquivos .js, os ícones, sw.js e manifest.webmanifest.
     </div>
 
     <header class="home-head">
@@ -362,10 +362,30 @@
   <link href="06_style.css" rel="stylesheet"/>
   <link href="07_style.css" rel="stylesheet"/>
   <link href="08_style.css" rel="stylesheet"/>
-  <script src="00_pwa_register.js"></script>
-  <script src="00_lazy_bootstrap.js">
-  </script>
- 
+
+
+
+  <!-- NYX v5.31: carregamento direto. Sem lazy loading e sem PWA cache para evitar travamento no GitHub Pages mobile. -->
+  <script src="00_cache_reset_v531.js?v=5.31"></script>
+  <script src="01_modular_core.js?v=5.31"></script>
+  <script src="02_script.js?v=5.31"></script>
+  <script src="04_script.js?v=5.31"></script>
+  <script src="05_script.js?v=5.31"></script>
+  <script src="06_script.js?v=5.31"></script>
+  <script src="07_script.js?v=5.31"></script>
+  <script src="08_script.js?v=5.31"></script>
+  <script src="09_script.js?v=5.31"></script>
+  <script src="10_quiz_bank_v23_data.js?v=5.31"></script>
+  <script src="11_script.js?v=5.31"></script>
+  <script src="12_quiz_hud.js?v=5.31"></script>
+  <script src="13_atlas_quiz_sync.js?v=5.31"></script>
+  <script src="14_script.js?v=5.31"></script>
+  <script src="15_home_counter_modal.js?v=5.31"></script>
+  <script src="16_quiz_clean_auto_report.js?v=5.31"></script>
+  <script src="17_script.js?v=5.31"></script>
+  <script src="18_script.js?v=5.31"></script>
+  <script src="19_consultas_rapidas.js?v=5.31"></script>
+  <script src="00_home_stable_clicks.js?v=5.31"></script>
   <script>
    window.addEventListener('load', function(){
      var ok = !!document.querySelector('link[href="00_style.css"]');
